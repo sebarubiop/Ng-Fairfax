@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="page-header">
+        <h1>Send Email with Sendgrid/MailGun on Rails</h1>
+        <p>Enter details in the following form and you will receive an email that it's sent with SendGrid as primary email provider or MailGun as secondary email provider</p>
+    </div>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">First Name</label>
+            <div class="col-sm-5">
+                <input type="text" ng-model="contact.first_name" class="form-control" id="inputPassword3" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Last Name</label>
+            <div class="col-sm-5">
+                <input type="text" ng-model="contact.last_name" class="form-control" id="inputPassword3" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-5">
+                <input type="email" ng-model="contact.email" class="form-control" id="inputEmail3" placeholder="Email">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button ng-click="sendEmail()" class="btn btn-default">Send Email</button>
+                <i class="fa fa-circle-o-notch fa-spin" ng-if="spinner" style="font-size:24px"></i>
+            </div>
+        </div>
+    </form>
+
+    <div class="alert alert-primary" ng-if="message" role="alert">
+        {{message}}
+    </div>
+
+
+</div>
